@@ -9,8 +9,8 @@
 
 ## The program:
 * breaks the string down into an array of numbers split() by spaces, then checks the number.
-  * The array then returns predetermined responses in a range from 0 to the number entered as an upper limit.
+* The array then returns predetermined responses in a range from 0 to the number entered as an upper limit.
 
-  * There are easter egg responses for hexadecimal non-number characters separated by spaces as well. A few of them change depending on how many times you have entered them.
+* There are easter egg responses for hexadecimal non-number characters separated by spaces as well. A few of them change depending on how many times you have entered them.
 
 # View here: https://riverface.github.io/Array-Independent-project-HAL9000-/

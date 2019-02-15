@@ -53,10 +53,10 @@ function Frank(){
         default:
         switch (o % 3) {
           case 0:
-          outStr = "Sorry, Dave. Can't let you do that, Dave.";
+          outStr = "Sorry, Dave. Can't let you do that, Dave. ";
           break;
           default:
-          outStr = "invalid query.";
+          outStr = "invalid query";
           break;
         }
 
@@ -127,9 +127,11 @@ function Frankquestions()
       case "f":
       outStr = "Your wife is very good, frank.";
       break;
-
+      default:
+                outStr = "invalid query";
+      break;
     }
-        $("#output").append(", " + outStr  );
+    $("#output").append( outStr + ", ");
 
   });
 
