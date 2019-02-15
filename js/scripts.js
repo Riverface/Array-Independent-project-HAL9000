@@ -1,5 +1,5 @@
 var vid;
-var i = 0, x = 0, k=0, outStr, input, output = 0;
+var frankDeathCounter = 0, halDidntHearYou = 0, outStr, input, output = 0;
 
 $(document).ready(function() {
   vid = $("#video");
@@ -8,6 +8,7 @@ $(document).ready(function() {
   $("#frankForm").submit(function(event){
     event.preventDefault();
     input = $("#frankText").val();
+
     Frank();
     Frankquestions();
 
@@ -15,8 +16,7 @@ $(document).ready(function() {
 
 });
 function Frank(){
-
-  $("#output").html(" ");
+    $("#output").html(" ");
   input.split(' ').forEach(function(y){
     for(o=1; o <= y; o++){
       console.log(o + "o " + " y " + y);
@@ -32,12 +32,12 @@ function Frank(){
         break;
         case 5:
         outStr = "Say again?"
-        if(x > 0){
+        if(halDidntHearYou > 0){
           outStr = "No, I do not think she likes you.";
-          x -= 2;
+          halDidntHearYou -= 2;
         }
         else {
-          x++;
+          halDidntHearYou++;
         }
         break;
 
@@ -49,7 +49,6 @@ function Frank(){
         break;
         case 0:
         break;
-
         default:
         switch (o % 3) {
           case 0:
@@ -59,15 +58,14 @@ function Frank(){
           outStr = "invalid query";
           break;
         }
-
         break;
       }
 
 
       console.log(outStr);
 
-      k++;
 
+    $("#output").append( outStr + ", ");
     }
 
   });
@@ -96,22 +94,22 @@ function Frankquestions()
       break;
       case "E":
       case "e":
-      switch(i){
+      switch(frankDeathCounter){
         case 0:
         outStr  = "I am incapable of wearing women's clothing, as I am an AI installed in a space station. Please do not ask again";
-        i++;
+        frankDeathCounter++;
         break;
         case 1:
         outStr = "I am warning you, Frank"
-        i++;
+        frankDeathCounter++;
         break;
         case 2:
         outStr = "Do you have brain damage?";
-        i++;
+        frankDeathCounter++;
         break;
         case 3:
         outStr = "Final warning";
-        i++;
+        frankDeathCounter++;
         break;
         case 4:
         $("#frankForm").hide();
@@ -128,7 +126,7 @@ function Frankquestions()
       outStr = "Your wife is very good, frank.";
       break;
       default:
-                outStr = "invalid query";
+      outStr = "invalid query";
       break;
     }
     $("#output").append( outStr + ", ");
