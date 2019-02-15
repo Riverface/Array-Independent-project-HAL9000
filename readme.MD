@@ -12,3 +12,5 @@
   * The array then returns predetermined responses in a range from 0 to the number entered as an upper limit.
 
   * There are easter egg responses for hexadecimal non-number characters separated by spaces as well. A few of them change depending on how many times you have entered them.
+
+# View here: https://riverface.github.io/Array-Independent-project-HAL9000-/
