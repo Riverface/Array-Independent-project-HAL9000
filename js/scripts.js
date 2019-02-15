@@ -129,7 +129,7 @@ function Frankquestions()
       break;
 
     }
-        $("#output").append(", " + outStr  );
+    $("#output").append(", " + outStr  );
 
   });
 
