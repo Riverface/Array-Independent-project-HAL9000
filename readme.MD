@@ -13,8 +13,8 @@
 
 Here also are the specs:
 
-| behavior | input | Output
-| --- | ----------- | |
+| behavior | input | Output |
+| --- | ----------- | ---- |
 | Returns one response based on number input | 1  | Beep |
 | Returns specific response based on number's remainder with 3 (0) | 3 | "Sorry, Dave. Can't let you do that, dave." |
 | Returns predetermined response based on alpha character input | b | Yes, I do need an oil change. You can access my oil from the outside. Why don't you go out there? :)  |
