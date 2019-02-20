@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/master.css">
-  <script type="text/javascript" src="js/jquery-3.3.1.js">  </script>
-  <script type="text/javascript" src="js/scripts.js">
-  </script>
-  <meta charset="utf-8">
-  <title>HAL 9000</title>
-</head>
-<body>
-  <div class="jumbotron">
-    <h1>Hello, Frank.</h1>
-  </div>
-  <div class="main">
-    <div class="alert-info" id="prompt">
-      <h4>
-        Ask HAL a predetermined question in hexadecimal.
-      </h4>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/master.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.js">  </script>
+    <script type="text/javascript" src="js/scripts.js">
+    </script>
+    <meta charset="utf-8">
+    <title>HAL 9000</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Hello, Frank.</h1>
     </div>
-    <div class="lowermain">
-      <span >
-        HAL is on the fritz, so he may tell you more than you want to know.
-        HAL also has a bad memory, so continued queries must also be in the same "Sentence" of commands.
-      </span>
-      <hr>
-      Input a number or alphanumeric characters A-F with spaces between entries.
-      <form  id="frankForm" >
-        <input type="text" name="" id="frankText" value=""></input>
-        <input type="submit" class="btn" name="" value="Submit" id="frankSubmit"></input>
-        <div  id="output">
-
-        </div>
+    <div class="main">
+      <div class="alert-info" id="prompt">
+        <h4>
+          Ask HAL a predetermined question in hexadecimal.
+        </h4>
       </div>
-
-
-    </form>
+      <div class="lowermain">
+        <span>
+          HAL is on the fritz, so he may tell you more than you want to know.
+          HAL also has a bad memory, so continued queries must also be in the same "Sentence" of commands.
+        </span>
+        <hr>
+        Input a number or alphanumeric characters A-F with spaces between entries.
+        <form  id="frankForm" >
+          <input type="text" name="" id="frankText" value=""></input>
+          <input type="submit" class="btn" name="" value="Submit" id="frankSubmit"></input>
+          <div  id="output">
+      </form>
+    </div>
   </div>
-    <div id="frankdie">
-
-      <video id="video" type="video/mp4" src="media/frankdies.mp4">
-      </div>
-  </body>
+    </div>
+      <div id="frankdie">
+        <video id="video" type="video/mp4" src="media/frankdies.mp4">
+        </div>
+    </body>
   </html>
