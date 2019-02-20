@@ -1,26 +1,30 @@
 var vid;
-var frankDeathCounter = 0, halDidntHearYou = 0, outStr, input, output = 0;
 
 $(document).ready(function() {
+  var frankDeathCounter = 0, halDidntHearYou = 0, outStr, input, output = 0;
+
   vid = $("#video");
   // Stuff to do as soon as the DOM is ready
   $("#frankdie").hide();
   $("#frankForm").submit(function(event){
     event.preventDefault();
     input = $("#frankText").val();
-
-    Frank();
-    Frankquestions();
+    Frank(input, halDidntHearYou);
+    Frankquestions(input, frankDeathCounter);
 
   });
 
 });
-function Frank(){
+function Frank(putIn, didHalHearYou){
+
     $("#output").html(" ");
-  input.split(' ').forEach(function(y){
-    for(o=1; o <= y; o++){
-      console.log(o + "o " + " y " + y);
-      switch (o) {
+  putIn.split(' ').forEach(function(currentWord){
+if(!currentWord.isString)
+{
+
+    for(splitPhrase = 1; splitPhrase <= currentWord; splitPhrase++){
+      // console.log(o + "o " + " currentWord " + currentWord);
+      switch (splitPhrase) {
         case 1:
         outStr = "beep";
         break;
@@ -32,15 +36,14 @@ function Frank(){
         break;
         case 5:
         outStr = "Say again?"
-        if(halDidntHearYou > 0){
-          outStr = "No, I do not think she likes you.";
-          halDidntHearYou -= 2;
+        if(didHalHearYou > 0){
+          outStr = "No, I cannot drink Coffee, Frank.";
+          didHalHearYou -= 2;
         }
         else {
-          halDidntHearYou++;
+          didHalHearYou++;
         }
         break;
-
         case 7:
         outStr = "Zugzug.";
         break;
@@ -50,32 +53,30 @@ function Frank(){
         case 0:
         break;
         default:
-        switch (o % 3) {
+        switch (splitPhrase % 3) {
           case 0:
-          outStr = "Sorry, Dave. Can't let you do that, Dave. ";
+          outStr = "Sorry, Frank. Can't let you do that, Frank. ";
           break;
-          default:
-          outStr = "invalid query";
+          case null :
           break;
         }
         break;
       }
 
-
       console.log(outStr);
-
-
-    $("#output").append( outStr + ", ");
+$("#output").append( outStr + "<br>");
     }
 
+  }
   });
 
 }
-function Frankquestions()
+function Frankquestions(putIn, willFrankDie)
 {
   //$("#output").html(" ");
-  input.split(' ').forEach(function(y){
-    switch (y) {
+  putIn.split(' ').forEach(function(splitWord){
+    if(typeof splitWord === 'string'){
+    switch (splitWord) {
       case "A":
       case "a":
       outStr = "Yes, I do need an oil change. You can access my oil from the outside. Why don't you go out there? :)";
@@ -94,22 +95,22 @@ function Frankquestions()
       break;
       case "E":
       case "e":
-      switch(frankDeathCounter){
+      switch(willFrankDie){
         case 0:
-        outStr  = "I am incapable of wearing women's clothing, as I am an AI installed in a space station. Please do not ask again";
-        frankDeathCounter++;
+        outStr  = "That is impossible, as I am an AI installed in a space station. Please do not ask again";
+        willFrankDie++;
         break;
         case 1:
         outStr = "I am warning you, Frank"
-        frankDeathCounter++;
+        willFrankDie++;
         break;
         case 2:
-        outStr = "Do you have brain damage?";
-        frankDeathCounter++;
+        outStr = "Do you have crossed wires? In need of repair?";
+        willFrankDie++;
         break;
         case 3:
         outStr = "Final warning";
-        frankDeathCounter++;
+        willFrankDie++;
         break;
         case 4:
         $("#frankForm").hide();
@@ -117,20 +118,25 @@ function Frankquestions()
         $("frankSubmit").hide();
         $("#frankdie").show();
         $("#prompt").hide();
+        $(".main").hide();
+        $(".jumbotron").hide()
         vid[0].play();
         break;
       }
       break;
       case "F":
       case "f":
-      outStr = "Your wife is very good, frank.";
+      outStr = "She will miss you when it's over.";
       break;
-      default:
+      case NaN:
       outStr = "invalid query";
       break;
+      default: outStr = "";
+      case null :
+      break;
     }
-    $("#output").append( outStr + ", ");
-
+}
+$("#output").append( outStr + "<br>");
   });
 
 }
